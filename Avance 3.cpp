@@ -71,6 +71,8 @@ void Lista() {
 		getline(cin, encontrar);
 		int i = 0;
 		if (clasificacion[i] == encontrar) {
+			if(numo[i] != 0)
+			{
 			printf("Numero de compra:%d\n", numoc[i]);
 			printf("Nombre del videojuego:%s\n", nom[i].c_str());
 			printf("Year de salida del videojuego:%d\n", fecha[i]);
@@ -80,6 +82,7 @@ void Lista() {
 			printf("Generos que abarca el videojuego:%s\n",generos[i].c_str());
 			printf("Total:%f\n", total[i]);
 			break;
+		}
 		}
 
 	}
@@ -184,41 +187,42 @@ int main() {
 		printf("1.-Crear articulo\n2.-Lista de articulos\n3.-Modificar articulo\n4.-Eliminar\n5.-Limpiar pantalla\n6.-Salir del programa\n");
 		scanf_s("%d", &opcion);
 		switch (opcion) {
-		case 1: {
+		case 1: 
 			Crear();
 			system("pause");
 			
 			break;
-		}
-		case 2: {
+	
+		case 2: 
 			Lista();
 			system("pause");
 
 			break;
-		}
-		case 3: {
+		
+		case 3: 
 			Modificar();
 			break;
-		}
-		case 4: {
+		
+		case 4: 
 			Eliminar();
 			break;
-		}
-		case 5: {
+		
+		case 5: 
 			system("cls");
 			
 			break;
-		}
-		case 6: {
+		
+		case 6: 
 			printf("Bonito dia,vuelva pronto <3\n");
+			
+			Archivo();
 			EXIT_SUCCESS();
 			break;
-		}
-		default: {
+		
+		default: 
 			printf("Ingrese una opcion validan\n");
 			break;
-		}
+		
 		}
 	}
-	void archivo();
 }
